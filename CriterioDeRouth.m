@@ -1,5 +1,6 @@
 clear all;
 clc
+disp('Criterio de estabilidad de Routh');
 while 1 
     n=input('Ingrese el orden de su polinomio\n');
     home
@@ -60,7 +61,7 @@ end
 a=(real(roots(p)))';
 cc=0;
 for i=1:length(a)
-    if a(i)>0.1
+    if a(i)>0.001
         cc=cc+1;
     end
 end
