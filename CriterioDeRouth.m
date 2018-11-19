@@ -1,24 +1,27 @@
-clear all;
+function [g,cc,est, b] = CriterioDeRouth(n,p)
 clc
-disp('Criterio de estabilidad de Routh');
-while 1 
-    n=input('Ingrese el orden de su polinomio\n');
-    home
-    if n==0
-        fprintf('Polinomio no valido, Ingrese nuevamente\n');
-    else
-        break;
-    end
-end
-p=[1:n];
-fprintf('Ingrese un polinomio\n');
-for i=0:n
-    fprintf('\nCoeficiente %d: ', i+1);
-    p(i+1)=input('');
-end
-disp('Su polinomio es')
-disp(p);
-disp(poly2sym(p))
+ccount=n;
+disp(n)
+disp(p)
+%disp('Criterio de estabilidad de Routh');
+%while 1 
+%    n=input('Ingrese el orden de su polinomio\n');
+%    home
+%    if n==0
+%        fprintf('Polinomio no valido, Ingrese nuevamente\n');
+%    else
+%        break;
+%    end
+%end
+%p=[1:n];
+%fprintf('Ingrese un polinomio\n');
+%for i=0:n
+%    fprintf('\nCoeficiente %d: ', i+1);
+%    p(i+1)=input('');
+%end
+%disp('Su polinomio es')
+%disp(p);
+%disp(poly2sym(p))
 r=mod(n+1,2);
 g(1,:)=p(1:2:n+1);
 
@@ -42,6 +45,9 @@ end
 
 fprintf('La matriz obtenida es: ');
 g
+b=0;
+cc=0;
+est=0;
 h=size(g);
 for i=1:h(1)
     if g(i)==0
@@ -65,5 +71,7 @@ for i=1:length(a)
         cc=cc+1;
     end
 end
+est=ccount-cc;
 fprintf('El numero de polos inestables es: %d\n ',cc);
-fprintf('El numero de polos estables es: %d \n',length(a)-cc);
+fprintf('El numero de polos estables es: %d \n',est);
+b=1;
