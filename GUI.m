@@ -109,7 +109,7 @@ set(handles.edit_Matriz, 'string', num2str(matriz));
 set(handles.text_Est, 'string', num2str(est))
 set(handles.text_Inest, 'string', num2str(in))
 grafica_raices(polinomio)
-set(handles.text_nota, 'string', 'El proceso se realizó con éxito')
+set(handles.text_nota, 'string', 'El proceso se realizo con exito')
 else
     set(handles.text_nota, 'string', 'El arreglo correspondiente no se puede formar correctamente')
 end
@@ -125,7 +125,7 @@ set(handles.edit_Matriz, 'string', num2str(matriz));
 set(handles.text_Est, 'string', num2str(est))
 set(handles.text_Inest, 'string', num2str(in))
 grafica_raices(polinomio)
-set(handles.text_nota, 'string', 'El proceso se realizó con éxito')
+set(handles.text_nota, 'string', 'El proceso se realizo con éxito')
 
 
 function edit_Grado_Callback(hObject, eventdata, handles)
